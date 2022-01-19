@@ -61,20 +61,22 @@ function App() {
 
   return (
     <div className="App">
-      <h1>NASAgram</h1>
-      {console.log("state", data)}
-      {/* CONTROLLED FORM - meaning handle our change via state */}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="userInput">Search: </label>
-        <input
-          type="text"
-          id="userInput"
-          name="userInput"
-          onChange={handleChange}
-          value={userInput}
-        />
-        <input type="submit" value="submit" />
-      </form>
+      <div className="header">
+        <h1>NASA-Gram</h1>
+        {console.log("state", data)}
+        {/* CONTROLLED FORM - meaning handle our change via state */}
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="userInput">Search: </label>
+          <input
+            type="text"
+            id="userInput"
+            name="userInput"
+            onChange={handleChange}
+            value={userInput}
+          />
+          <input type="submit" value="submit" />
+        </form>
+      </div>
 
       {/* <button onClick={toggle}>{like}</button> */}
 
@@ -86,7 +88,7 @@ function App() {
       ) : (
         <div id="nasa-container">
           {data.map((item) => {
-            return <NASAData item={item} />;
+            return <NASAData className="list" item={item} />;
           })}
         </div>
       )}
