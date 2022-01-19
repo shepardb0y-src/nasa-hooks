@@ -62,7 +62,13 @@ function App() {
   return (
     <div className="App">
       <div className="header">
+        <img
+          className="img"
+          src="https://www.nasa.gov/sites/default/files/thumbnails/image/nasa-logo-web-rgb.png"
+          alt=""
+        />
         <h1>NASA-Gram</h1>
+
         {console.log("state", data)}
         {/* CONTROLLED FORM - meaning handle our change via state */}
         <form onSubmit={handleSubmit}>
@@ -74,7 +80,9 @@ function App() {
             onChange={handleChange}
             value={userInput}
           />
-          <input type="submit" value="submit" />
+          <button type="submit" value="submit">
+            Explore
+          </button>
         </form>
       </div>
 
